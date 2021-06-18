@@ -33,13 +33,19 @@ label, input {
     display: block;
 }
 label {
-    font-size: 16pt;
     position: relative;
     top: 2rem;
-
+}
+span {
+    position: relative;
+    transition: all 2s ease-out;
+}
+span.wave {
+    color:yellow;
+    transform: translateY(-1rem);
 }
 input {
-    font-size: 16pt;
+    font-size: 18pt;
     height: 2rem;
     width: 30rem;
     box-shadow: none;
@@ -49,17 +55,11 @@ input {
     background-color: #154215;
     border-bottom: 2pt solid #f2fff2
 }
-input::placeholder {
-    color: #f2fff2;
-}
 input[type="submit"] {
     width: 30.5rem;
     height: 2.5rem;
     background-color: #e3ffe3;
     color: #154215;
-}
-.hidden {
-    opacity: 0;
 }
 a {
     color: #f59393;
