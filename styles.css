@@ -37,12 +37,14 @@ label {
     top: 2rem;
 }
 span {
+    display: inline-block;
     position: relative;
-    transition: all 2s ease-out;
+    transition: all 500ms ease-out;
 }
 span.wave {
-    color:yellow;
-    transform: translateY(-1rem);
+    transform: translateY(-2rem); /* I thought this didn't work because span has no position yet... */
+
+    /* Which is kinda true.  There is a space of time between asking */
 }
 input {
     font-size: 18pt;
