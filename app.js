@@ -22,15 +22,28 @@ form.addEventListener("focusin", (e) => {
 
             // add span around each letter, so each letter can work independently
             labelArray.forEach(letter => {
-                spanString += `<span style="transition-delay: ${delay}ms">${letter}</span>`;
+                spanString += `<span class="letter" style="transition-delay: ${delay}ms">${letter}</span>`;
                 delay += 100;
             });
 
             // replace original label with the new span string
-            labelInFocus.innerHTML = spanString;
-            document.querySelectorAll("span").forEach(span => {
-                span.classList.add("wave");
-            });
+            labelInFocus.innerHTML = spanString;  
+            // We need this to render, before giving it a new class.  Rendering actually takes a little bit of time.
+            // adding the class "wave" may happen before the span is even finished being painted?
+            // "But you can't transition anything, if the display is changed at the same time."
+            //  - quoted from https://stackoverflow.com/questions/54344996/css-transition-doesnt-work-if-element-start-hidden/
+            
+            
+            // requestAnimationFrame() takes enough time that the new wave class will not be added before the span
+            // finishes rendering.  We need the original position calculated before we do a transform.
+            requestAnimationFrame(()=> requestAnimationFrame(() => document.querySelectorAll("span")
+                .forEach(span => {
+                    console.log(span.classList);
+                    if (span.classList.contains("letter")) {
+                        span.classList.add("wave");
+                    }
+                }
+            )));
 
         } // end animate on first focus
     }; // end if not submit input
