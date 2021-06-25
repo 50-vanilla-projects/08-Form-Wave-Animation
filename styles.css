@@ -1,16 +1,25 @@
+:root {
+    --body-color: #9471ab;
+    --form-color: #360657;
+    --font-color: #e8d5f5;
+    --input-color: #faf7fc;
+    --shadow-color: #030005;
+    --register-color: dodgerblue;
+}
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16pt;
-    color: #f2fff2;
+    color: var(--font-color);
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e3ffe3;
+    background-color: var(--body-color);
 }
 form {
     width: 30rem;
@@ -22,8 +31,8 @@ form {
     justify-content: space-between;
     align-items: flex-start;
     border-radius: 8px;
-    background-color: #154215;
-    box-shadow: 10px 0px 13px -7px #807b73, -10px 0px 13px -7px #807b73;
+    background-color: var(--form-color);
+    box-shadow: 10px 0px 13px -7px var(--shadow-color), -10px 0px 13px -7px var(--shadow-color);
 }
 h1 {
     text-align: center;
@@ -53,17 +62,17 @@ input {
     box-shadow: none;
     outline: none;
     border: none;
-    color:#f2fff2;
-    background-color: #154215;
-    border-bottom: 2pt solid #f2fff2
+    color:var(--input-color);
+    background-color: var(--form-color);
+    border-bottom: 2pt solid var(--font-color);
 }
 input[type="submit"] {
     width: 30.5rem;
     height: 2.5rem;
-    background-color: #e3ffe3;
-    color: #154215;
+    background-color: var(--font-color);
+    color: var(--form-color);
 }
 a {
-    color: #f59393;
+    color: var(--register-color);
 }
 
