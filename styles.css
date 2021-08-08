@@ -76,3 +76,19 @@ a {
     color: var(--register-color);
 }
 
+@media (max-width: 600px) {
+    form {
+        width: 80vw;
+        height: auto;
+        justify-content: flex-start;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    input {
+        width: 80vw;
+    }
+    input[type="submit"] {
+        width: 80vw;
+    }
+}
