@@ -28,14 +28,19 @@ form.addEventListener("focusin", (e) => {
 
             // replace original label with the new span string
             labelInFocus.innerHTML = spanString;  
+            
             // We need this to render, before giving it a new class.  Rendering actually takes a little bit of time.
-            // adding the class "wave" may happen before the span is even finished being painted?
+            // Adding the class "wave" was happening before the span was finished being painted.  I learned about
+            // the Critical Rendering Path, the CSSOM (CSS Object Model), and the Render Tree.
             // "But you can't transition anything, if the display is changed at the same time."
             //  - quoted from https://stackoverflow.com/questions/54344996/css-transition-doesnt-work-if-element-start-hidden/
             
             
-            // requestAnimationFrame() takes enough time that the new wave class will not be added before the span
-            // finishes rendering.  We need the original position calculated before we do a transform.
+            // Putting the add wave class command inside a requestAnimationFrame() takes enough time that the 
+            // the span will finish rendering before the class is actually added.  We need the original position 
+            // calculated by the critical redering path and the new dom and ccsom need to be painted before 
+            // we do a transform.
+
             requestAnimationFrame(()=> requestAnimationFrame(() => document.querySelectorAll("span")
                 .forEach(span => {
                     console.log(span.classList);
