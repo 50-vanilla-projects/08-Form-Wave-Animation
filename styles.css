@@ -23,7 +23,7 @@ body {
 }
 form {
     width: 30rem;
-    height: 70vh;
+    height: 60vh;
     padding: 4rem;
     position: relative;
     display: flex;
@@ -76,19 +76,21 @@ a {
 }
 
 @media screen and (max-width: 600px) {
+    body {
+        font-size: 14pt;
+    }
     form {
-        width: 80vw;
-        height: auto;
-        justify-content: flex-start;
+        width: 60vw;
+        padding: 2rem;
     }
     h1 {
         font-size: 2rem;
     }
     input {
-        width: 80vw;
+        width: 60vw;
     }
     input[type="submit"] {
-        width: 80vw;
+        width: 60vw;
         margin-top: 1rem;
     }
 }
