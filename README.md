@@ -1,5 +1,5 @@
 # 08-Form-Wave-Animation
-A sign in form with placeholder animation
+*A sign in form with placeholder animation*
 
 
 This is the eighth project from the Udemy course designed by Florin Pop and taught by Brad Traversy 
