@@ -51,9 +51,7 @@ span {
     transition: all 500ms ease-out;
 }
 span.wave {
-    transform: translateY(-2rem); /* I thought this didn't work because span has no position yet... */
-
-    /* Which is kinda true.  There is a space of time between asking */
+    transform: translateY(-2rem);
 }
 input {
     font-size: 18pt;
